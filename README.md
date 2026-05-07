@@ -7,10 +7,15 @@ Advanced calculator: themes, language settings.
   
 - Or run [Calculator_v.3.py](Calculator_v.3.py)
 
-## 📄 Full documentation:
-- 🇷🇺  Russian version [Document](Calculator_v.3_RU.md)
+## 💾 Code comments:
+- 🇷🇺 Russian version: [Comments](Calc_v.3_com_RU.py)
   
-- 🇺🇲  English version: [Document](Calculator_v.3_EN.md)
+- 🇺🇲 English version: [Comments](Calc_v.3_com_EN.py)
+
+## 📄 Full documentation:
+- 🇷🇺  Russian version [Documentation](Calculator_v.3_RU.md)
+  
+- 🇺🇲  English version: [Documentation](Calculator_v.3_EN.md)
 
 ## 📷 Screenshots:
 ![](Calc_v.3_1.jpg)
