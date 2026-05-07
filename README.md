@@ -13,6 +13,9 @@ Advanced calculator: themes, language settings.
 - 🇺🇲  English version: [Document](Calculator_v.3_EN.md)
 
 ## 📷 Screenshots:
-![](screenshot1.png)
+![](Calc_v.3_1.jpg)
+![](Calc_v.3_2.jpg)
+![](Calc_v.3_3.jpg)
+![](Calc_v.3_4.jpg)
 
 © NebulaStack
