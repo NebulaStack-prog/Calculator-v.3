@@ -23,7 +23,28 @@ class Calculator:
                 "theme": "Тема",
                 "light": "Светлая",
                 "dark": "Тёмная",
-                "calculate": "Вычислить"
+                "calculate": "Вычислить",
+                "copy": "Копировать",
+                "reset": "⟳ Сброс",
+                "history": "История",
+                "history_title": "ИСТОРИЯ",
+                "clear": "Очистить",
+                "empty_history": "История пуста",
+                "copied": "Скопировано!",
+                "select_operation": "Сначала выберите операцию",
+                "fill_fields": "Заполните все поля",
+                "operations": "ОПЕРАЦИИ",
+                "input": "ВВОД",
+                "result": "РЕЗУЛЬТАТ",
+                "input_hint": "Строки для ввода переменных",
+                "categories": {
+                    "arithmetic": "АРИФМЕТИКА",
+                    "numbers": "ЧИСЛА",
+                    "geometry": "ГЕОМЕТРИЯ",
+                    "algebra": "АЛГЕБРА",
+                    "functions": "ФУНКЦИИ",
+                    "graphs": "ГРАФИКИ"
+                }
             },
             "en": {
                 "settings": "Settings",
@@ -31,47 +52,108 @@ class Calculator:
                 "theme": "Theme",
                 "light": "Light",
                 "dark": "Dark",
-                "calculate": "Calculate"
-            },
+                "calculate": "Calculate",
+                "copy": "Copy",
+                "reset": "⟳ Reset",
+                "history": "History",
+                "history_title": "HISTORY",
+                "clear": "Clear",
+                "empty_history": "History is empty",
+                "copied": "Copied!",
+                "select_operation": "Select an operation first",
+                "fill_fields": "Fill all fields",
+                "operations": "OPERATIONS",
+                "input": "INPUT",
+                "result": "RESULT",
+                "input_hint": "Enter variables here",
+                "categories": {
+                    "arithmetic": "ARITHMETIC",
+                    "numbers": "NUMBERS",
+                    "geometry": "GEOMETRY",
+                    "algebra": "ALGEBRA",
+                    "functions": "FUNCTIONS",
+                    "graphs": "GRAPHS"
+                }
+            }
         }
 
         self.button_formulas = {
-            "Сложение": "a + b",
-            "Вычитание": "a - b",
-            "Умножение": "a × b",
-            "Деление": "a : b",
-            "Степень": "aᵇ",
-            "Корень числа": "√a",
-            "Факториал": "a! = 1 × ... × a",
-            "Дв-й Факториал": "a!! = ×Чет/Нечет",
-            "Простое?": "Простое?",
-            "Множители": "a = b1 × ... × bn",
-            "НОК": "НОК a и b",
-            "НОД": "НОД a и b",
-            "Синус": "sin(a)",
-            "Косинус": "cos(a)",
-            "Тангенс": "tg(a)",
-            "Котангенс": "ctg(a)",
-            "° → rad": "° → rad",
-            "rad → °": "rad → °",
-            "Уравнение Х": "ax + b = 0",
-            "Уравнение Х²": "ax² + bx + c = 0",
-            "Логарифм": "logₐb",
-            "Модуль": "|a|",
-            "Дробная Часть": "{a}",
-            "Целая Часть": "[a]",
-            "Прямая": "y = ax + b",
-            "Парабола": "y = ax² + bx + c",
-            "Гипербола": "y = a / (x + b) + c",
-            "Синусоида": "y = a×sin(x) + b",
-            "Косинусоида": "y = a×cos(x) + b",
-            "Тангенсоида": "y = a×tg(x) + b",
-            "Окружность": "(y-a)² + (x-b)² = c²",
-            "Модуль Х": "y = a|x| + b",
-            "Модуль Y": "|y| = ax + b",
-            "Модуль Y и Х": "|y| = a|x| + b",
-            "Котангенсоида": "y = a×ctg(x) + b",
-            "Сердце": "Подарок от NS"
+            "ru": {
+                "Сложение": "a + b",
+                "Вычитание": "a - b",
+                "Умножение": "a × b",
+                "Деление": "a : b",
+                "Степень": "aᵇ",
+                "Корень числа": "√a",
+                "Факториал": "a! = 1 × ... × a",
+                "Дв-й Факториал": "a!! = ×Чет/Нечет",
+                "Простое?": "Простое?",
+                "Множители": "a = b1 × ... × bn",
+                "НОК": "НОК a и b",
+                "НОД": "НОД a и b",
+                "Синус": "sin(a)",
+                "Косинус": "cos(a)",
+                "Тангенс": "tg(a)",
+                "Котангенс": "ctg(a)",
+                "° → rad": "° → rad",
+                "rad → °": "rad → °",
+                "Уравнение Х": "ax + b = 0",
+                "Уравнение Х²": "ax² + bx + c = 0",
+                "Логарифм": "logₐb",
+                "Модуль": "|a|",
+                "Дробная Часть": "{a}",
+                "Целая Часть": "[a]",
+                "Прямая": "y = ax + b",
+                "Парабола": "y = ax² + bx + c",
+                "Гипербола": "y = a / (x + b) + c",
+                "Синусоида": "y = a×sin(x) + b",
+                "Косинусоида": "y = a×cos(x) + b",
+                "Тангенсоида": "y = a×tg(x) + b",
+                "Окружность": "(y-a)² + (x-b)² = c²",
+                "Модуль Х": "y = a|x| + b",
+                "Модуль Y": "|y| = ax + b",
+                "Модуль Y и Х": "|y| = a|x| + b",
+                "Котангенсоида": "y = a×ctg(x) + b",
+                "Сердце": "Подарок от NS"
+            },
+            "en": {
+                "Addition": "a + b",
+                "Subtraction": "a - b",
+                "Multiplication": "a × b",
+                "Division": "a : b",
+                "Power": "aᵇ",
+                "Square Root": "√a",
+                "Factorial": "a! = 1 × ... × a",
+                "Double Factorial": "a!! = Even/Odd",
+                "Is Prime?": "Prime?",
+                "Factors": "a = b1 × ... × bn",
+                "LCM": "LCM a and b",
+                "GCD": "GCD a and b",
+                "Sine": "sin(a)",
+                "Cosine": "cos(a)",
+                "Tangent": "tg(a)",
+                "Cotangent": "ctg(a)",
+                "° → rad": "° → rad",
+                "rad → °": "rad → °",
+                "Linear Eq": "ax + b = 0",
+                "Quadratic Eq": "ax² + bx + c = 0",
+                "Logarithm": "logₐb",
+                "Absolute": "|a|",
+                "Fractional": "{a}",
+                "Integer": "[a]",
+                "Line": "y = ax + b",
+                "Parabola": "y = ax² + bx + c",
+                "Hyperbola": "y = a / (x + b) + c",
+                "Sine Wave": "y = a×sin(x) + b",
+                "Cosine Wave": "y = a×cos(x) + b",
+                "Tangent Wave": "y = a×tg(x) + b",
+                "Circle": "(y-a)² + (x-b)² = c²",
+                "Mod X": "y = a|x| + b",
+                "Mod Y": "|y| = ax + b",
+                "Mod XY": "|y| = a|x| + b",
+                "Cotangent Wave": "y = a×ctg(x) + b",
+                "Heart": "Gift from NS"
+            }
         }
 
         self.colors = {
@@ -196,6 +278,7 @@ class Calculator:
 
     def change_language(self, lang):
         self.language = lang
+        self.root.title("Calculator" if lang == "en" else "Калькулятор")
         self.refresh_ui()
 
     def open_settings(self):
@@ -282,9 +365,9 @@ class Calculator:
         controls = tk.Frame(header, bg=self.colors['bg'])
         controls.pack(side='right', fill='y')
 
-        self.create_small_button(controls, "⟳ Сброс", self.reset_all, self.colors['surface'])
-        self.create_small_button(controls, "История", self.show_history_dialog, self.colors['surface'])
-        self.create_small_button(controls, "Настройки", self.open_settings, self.colors['surface'])
+        self.create_small_button(controls, self.t("reset"), self.reset_all, self.colors['surface'])
+        self.create_small_button(controls, self.t("history"), self.show_history_dialog, self.colors['surface'])
+        self.create_small_button(controls, self.t("settings"), self.open_settings, self.colors['surface'])
 
     def create_small_button(self, parent, text, command, bg):
         btn = tk.Button(
@@ -310,7 +393,7 @@ class Calculator:
 
         tk.Label(
             panel,
-            text="ОПЕРАЦИИ",
+            text=self.t("operations"),
             font=self.font_button,
             bg=self.colors['surface'],
             fg=self.colors['text_light'],
@@ -333,57 +416,54 @@ class Calculator:
         canvas.pack(side="left", fill="both", expand=True, padx=(10, 0))
         scrollbar.pack(side="right", fill="y")
 
-
         categories = [
-            ("#3b82f6", "АРИФМЕТИКА", [
-                ("Сложение", self.add, 2),
-                ("Вычитание", self.subtract, 2),
-                ("Умножение", self.multiply, 2),
-                ("Деление", self.divide, 2),
-                ("Степень", self.power, 2),
-                ("Корень числа", self.sqrt, 1)
+            ("#3b82f6", self.t("categories")["arithmetic"], [
+                (self.get_button_text("Сложение", "Addition"), self.add, 2),
+                (self.get_button_text("Вычитание", "Subtraction"), self.subtract, 2),
+                (self.get_button_text("Умножение", "Multiplication"), self.multiply, 2),
+                (self.get_button_text("Деление", "Division"), self.divide, 2),
+                (self.get_button_text("Степень", "Power"), self.power, 2),
+                (self.get_button_text("Корень числа", "Square Root"), self.sqrt, 1)
             ]),
-            ("#8b5cf6", "ЧИСЛА", [
-                ("Факториал", self.factorial, 1),
-                ("Дв-й Факториал", self.double_fact, 1),
-                ("Простое?", self.is_prime, 1),
-                ("Множители", self.prime_factors, 1),
-                ("НОД", self.gcd, 2),
-                ("НОК", self.lcm, 2)
+            ("#8b5cf6", self.t("categories")["numbers"], [
+                (self.get_button_text("Факториал", "Factorial"), self.factorial, 1),
+                (self.get_button_text("Дв-й Факториал", "Double Factorial"), self.double_fact, 1),
+                (self.get_button_text("Простое?", "Is Prime?"), self.is_prime, 1),
+                (self.get_button_text("Множители", "Factors"), self.prime_factors, 1),
+                (self.get_button_text("НОД", "GCD"), self.gcd, 2),
+                (self.get_button_text("НОК", "LCM"), self.lcm, 2)
             ]),
-            ("#10b981", "ГЕОМЕТРИЯ", [
-                ("Синус", self.sin, 1),
-                ("Косинус", self.cos, 1),
-                ("Тангенс", self.tan, 1),
-                ("Котангенс", self.ctg, 1),
-                ("° → rad", self.deg_to_rad, 1),
-                ("rad → °", self.rad_to_deg, 1)
+            ("#10b981", self.t("categories")["geometry"], [
+                (self.get_button_text("Синус", "Sine"), self.sin, 1),
+                (self.get_button_text("Косинус", "Cosine"), self.cos, 1),
+                (self.get_button_text("Тангенс", "Tangent"), self.tan, 1),
+                (self.get_button_text("Котангенс", "Cotangent"), self.ctg, 1),
+                (self.get_button_text("° → rad", "° → rad"), self.deg_to_rad, 1),
+                (self.get_button_text("rad → °", "rad → °"), self.rad_to_deg, 1)
             ]),
-            ("#f59e0b", "АЛГЕБРА", [
-                ("Уравнение Х", self.solve_linear, 2),
-                ("Уравнение Х²", self.solve_quadratic, 3),
-                ("Логарифм", self.logarithm, 2),
-                ("Модуль", self.abs, 1),
-                ("Дробная Часть", self.fractional, 1),
-                ("Целая Часть", self.integer, 1)
+            ("#f59e0b", self.t("categories")["algebra"], [
+                (self.get_button_text("Уравнение Х", "Linear Eq"), self.solve_linear, 2),
+                (self.get_button_text("Уравнение Х²", "Quadratic Eq"), self.solve_quadratic, 3),
+                (self.get_button_text("Логарифм", "Logarithm"), self.logarithm, 2),
+                (self.get_button_text("Модуль", "Absolute"), self.abs, 1),
+                (self.get_button_text("Дробная Часть", "Fractional"), self.fractional, 1),
+                (self.get_button_text("Целая Часть", "Integer"), self.integer, 1)
             ]),
-
-            ("#ff0000", "ФУНКЦИИ", [
-                ("Прямая", self.line, 2),
-                ("Парабола", self.parabola, 3),
-                ("Гипербола", self.hyperbola, 3),
-                ("Косинусоида", self.cosinus, 2),
-                ("Синусоида", self.sinus, 2),
-                ("Тангенсоида", self.tang, 2)
+            ("#ff0000", self.t("categories")["functions"], [
+                (self.get_button_text("Прямая", "Line"), self.line, 2),
+                (self.get_button_text("Парабола", "Parabola"), self.parabola, 3),
+                (self.get_button_text("Гипербола", "Hyperbola"), self.hyperbola, 3),
+                (self.get_button_text("Косинусоида", "Cosine Wave"), self.cosinus, 2),
+                (self.get_button_text("Синусоида", "Sine Wave"), self.sinus, 2),
+                (self.get_button_text("Тангенсоида", "Tangent Wave"), self.tang, 2)
             ]),
-
-            ("#ff69b4", "ГРАФИКИ", [
-                ("Окружность", self.circle, 3),
-                ("Модуль Х", self.moduleX, 2),
-                ("Модуль Y", self.moduleY, 2),
-                ("Модуль Y и Х", self.moduleXY, 2),
-                ("Котангенсоида", self.cotang, 2),
-                ("Сердце", self.heart, 1)
+            ("#ff69b4", self.t("categories")["graphs"], [
+                (self.get_button_text("Окружность", "Circle"), self.circle, 3),
+                (self.get_button_text("Модуль Х", "Mod X"), self.moduleX, 2),
+                (self.get_button_text("Модуль Y", "Mod Y"), self.moduleY, 2),
+                (self.get_button_text("Модуль Y и Х", "Mod XY"), self.moduleXY, 2),
+                (self.get_button_text("Котангенсоида", "Cotangent Wave"), self.cotang, 2),
+                (self.get_button_text("Сердце", "Heart"), self.heart, 1)
             ])
         ]
 
@@ -456,7 +536,7 @@ class Calculator:
 
         tk.Label(
             frame,
-            text="ВВОД",
+            text=self.t("input"),
             font=self.font_button,
             bg=self.colors['surface'],
             fg=self.colors['text_light'],
@@ -488,7 +568,14 @@ class Calculator:
             fg=self.colors['text_light'],
             anchor='w'
         )
-        self.status_label.pack(fill='x', padx=15, pady=(0, 10))
+        self.status_label = tk.Label(
+            input_card,
+            text=self.t("input_hint"),
+            font=self.font_subtitle,
+            bg=self.colors['card'],
+            fg=self.colors['text_light'],
+            anchor='w'
+        )
 
     def create_output_section(self, parent):
         frame = tk.Frame(parent, bg=self.colors['surface'])
@@ -496,7 +583,7 @@ class Calculator:
 
         tk.Label(
             frame,
-            text="РЕЗУЛЬТАТ",
+            text=self.t("result"),
             font=self.font_button,
             bg=self.colors['surface'],
             fg=self.colors['text_light'],
@@ -523,7 +610,7 @@ class Calculator:
 
         tk.Button(
             controls,
-            text="Вычислить",
+            text=self.t("calculate"),
             command=self.calculate,
             bg=self.colors['primary'],
             fg='white',
@@ -536,7 +623,7 @@ class Calculator:
 
         tk.Button(
             controls,
-            text="Копировать",
+            text=self.t("copy"),
             command=self.copy_result,
             bg=self.colors['surface'],
             fg=self.colors['text'],
@@ -609,7 +696,7 @@ class Calculator:
 
     def calculate(self):
         if not self.current_function:
-            messagebox.showinfo("Внимание", "Сначала выберите операцию")
+            messagebox.showinfo(self.t("settings"), self.t("select_operation"))
             return
 
         try:
@@ -617,7 +704,7 @@ class Calculator:
             for entry in self.input_fields:
                 val = entry.get().strip()
                 if not val:
-                    messagebox.showwarning("Ошибка", "Заполните все поля")
+                    messagebox.showwarning(self.t("settings"), self.t("fill_fields"))
                     return
 
                 try:
@@ -685,9 +772,12 @@ class Calculator:
         except:
             self.history = []
 
+    def get_button_text(self, ru_text, en_text):
+        return ru_text if self.language == "ru" else en_text
+
     def show_history_dialog(self):
         dialog = tk.Toplevel(self.root)
-        dialog.title("История вычислений")
+        dialog.title(self.t("history"))
         dialog.geometry("600x500")
         dialog.configure(bg=self.colors['bg'])
         dialog.transient(self.root)
@@ -698,7 +788,7 @@ class Calculator:
 
         tk.Label(
             header,
-            text="ИСТОРИЯ",
+            text=self.t("history_title"),
             font=self.font_title,
             bg=self.colors['surface'],
             fg=self.colors['text']
@@ -706,7 +796,7 @@ class Calculator:
 
         tk.Button(
             header,
-            text="Очистить",
+            text=self.t("clear"),
             command=lambda: self.clear_history(dialog),
             bg=self.colors['danger'],
             fg='white',
@@ -729,7 +819,7 @@ class Calculator:
         if not self.history:
             tk.Label(
                 scroll_frame,
-                text="История пуста",
+                text=self.t("empty_history"),
                 font=self.font_subtitle,
                 bg=self.colors['bg'],
                 fg=self.colors['text_light']
@@ -772,10 +862,10 @@ class Calculator:
 
     def copy_result(self):
         result = self.result_var.get()
-        if result and result != "ВЫБЕРИТЕ ОПЕРАЦИЮ И ЗАПОЛНИТЕ СТРОКИ":
+        if result and result not in [self.t("select_operation"), "ВЫБЕРИТЕ ОПЕРАЦИЮ И ЗАПОЛНИТЕ СТРОКИ"]:
             self.root.clipboard_clear()
-
-            self.result_var.set("Скопировано!")
+            self.root.clipboard_append(str(result))
+            self.result_var.set(self.t("copied"))
             self.root.after(1000, lambda: self.result_var.set(result))
 
     def reset_all(self):
