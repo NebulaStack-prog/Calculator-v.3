@@ -5,7 +5,7 @@ Advanced calculator: themes, language settings.
 ## 💻 Run:
 - Open with Python: [Calculator_v.3.py](Calculator_v.3.py)
 
-- Or download exe: [Calculator_v.3.exe](Calculator_v.3.exe)
+- Or download exe: [Calculator_v.3.exe](https://github.com/NebulaStack-prog/Calculator-v.3/releases/tag/v1.0)
 
 ## 📄 Full documentation:
 - 🇷🇺  Russian version [Documentation](Calculator_v.3_RU.md)
