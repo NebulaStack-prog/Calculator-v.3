@@ -20,9 +20,9 @@ Advanced calculator: themes, language settings.
 ## 📷 Screenshots:
 ![](Calc_v.3_1.jpg)
 ![](Calc_v.3_2.jpg)
+![](Calc_v.3_5.jpg)
 ![](Calc_v.3_3.jpg)
 ![](Calc_v.3_4.jpg)
-![](Calc_v.3_5.jpg)
 ![](Calc_v.3_6.jpg)
 
 © NebulaStack
