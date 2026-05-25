@@ -16,6 +16,11 @@ class Calculator:
         self.language = "ru"
         self.current_theme = "dark"
 
+        self.load_settings()
+        self.colors = self.themes[self.current_theme].copy()
+
+        self.root.configure(bg=self.colors['bg'])
+
         self.translations = {
             "ru": {
                 "settings": "Настройки",
@@ -224,11 +229,24 @@ class Calculator:
         with open("settings.json", "w") as f:
             json.dump(data, f)
 
+    def load_settings(self):
+        try:
+            if os.path.exists('settings.json'):
+                with open('settings.json', 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    if 'language' in data and data['language'] in ['ru', 'en']:
+                        self.language = data['language']
+                    if 'theme' in data and data['theme'] in ['dark', 'light']:
+                        self.current_theme = data['theme']
+        except Exception:
+            pass
+
     def change_theme(self, theme):
         self.current_theme = theme
         self.colors = self.themes[theme].copy()
         self.root.configure(bg=self.colors['bg'])
         self.refresh_ui()
+        self.save_settings()
 
     def t(self, key):
         return self.translations[self.language].get(key, key)
@@ -280,6 +298,7 @@ class Calculator:
         self.language = lang
         self.root.title("Calculator" if lang == "en" else "Калькулятор")
         self.refresh_ui()
+        self.save_settings()
 
     def open_settings(self):
         settings = tk.Toplevel(self.root)
