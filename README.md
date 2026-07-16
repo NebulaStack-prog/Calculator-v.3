@@ -2,7 +2,7 @@
 
 <img src="https://github.com/NebulaStack-prog/Calculator-v.3/raw/main/IMG_20260701_020311_502.jpg" width="200" height="230">
 
-Advanced calculator: themes, language settings. 
+> Advanced calculator: themes, language settings. 
 
 ## 💻 Project Run
 - Open with Python: [Calculator_v.3.py](Calculator_v.3.py)
