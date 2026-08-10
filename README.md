@@ -22,4 +22,4 @@
 ![](Calc_v.3_4.jpg)
 ![](Calc_v.3_6.jpg)
 
-© NebulaStack
+© NESTIMS
