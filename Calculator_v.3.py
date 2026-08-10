@@ -7,6 +7,7 @@ from typing import Union
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 class Calculator:
     def __init__(self, root):
         self.root = root
@@ -15,6 +16,36 @@ class Calculator:
 
         self.language = "ru"
         self.current_theme = "dark"
+
+        # Сначала определяем темы (они нужны для загрузки настроек)
+        self.themes = {
+            "dark": {
+                'bg': '#0a0a0f',
+                'surface': '#151522',
+                'card': '#1e1e2e',
+                'primary': '#7c3aed',
+                'secondary': '#06b6d4',
+                'accent': '#10b981',
+                'text': '#e2e8f0',
+                'text_light': '#94a3b8',
+                'danger': '#ef4444',
+                'warning': '#f59e0b',
+                'border': '#2d3748'
+            },
+            "light": {
+                'bg': '#f5f5f5',
+                'surface': '#ffffff',
+                'card': '#eaeaea',
+                'primary': '#7c3aed',
+                'secondary': '#06b6d4',
+                'accent': '#10b981',
+                'text': '#1a1a1a',
+                'text_light': '#6b7280',
+                'danger': '#ef4444',
+                'warning': '#f59e0b',
+                'border': '#d1d5db'
+            }
+        }
 
         self.load_settings()
         self.colors = self.themes[self.current_theme].copy()
@@ -82,126 +113,83 @@ class Calculator:
             }
         }
 
-        self.button_formulas = {
-            "ru": {
-                "Сложение": "a + b",
-                "Вычитание": "a - b",
-                "Умножение": "a × b",
-                "Деление": "a : b",
-                "Степень": "aᵇ",
-                "Корень числа": "√a",
-                "Факториал": "a! = 1 × ... × a",
-                "Дв-й Факториал": "a!! = ×Чет/Нечет",
-                "Простое?": "Простое?",
-                "Множители": "a = b1 × ... × bn",
-                "НОК": "НОК a и b",
-                "НОД": "НОД a и b",
-                "Синус": "sin(a)",
-                "Косинус": "cos(a)",
-                "Тангенс": "tg(a)",
-                "Котангенс": "ctg(a)",
-                "° → rad": "° → rad",
-                "rad → °": "rad → °",
-                "Уравнение Х": "ax + b = 0",
-                "Уравнение Х²": "ax² + bx + c = 0",
-                "Логарифм": "logₐb",
-                "Модуль": "|a|",
-                "Дробная Часть": "{a}",
-                "Целая Часть": "[a]",
-                "Прямая": "y = ax + b",
-                "Парабола": "y = ax² + bx + c",
-                "Гипербола": "y = a / (x + b) + c",
-                "Синусоида": "y = a×sin(x) + b",
-                "Косинусоида": "y = a×cos(x) + b",
-                "Тангенсоида": "y = a×tg(x) + b",
-                "Окружность": "(y-a)² + (x-b)² = c²",
-                "Модуль Х": "y = a|x| + b",
-                "Модуль Y": "|y| = ax + b",
-                "Модуль Y и Х": "|y| = a|x| + b",
-                "Котангенсоида": "y = a×ctg(x) + b",
-                "Сердце": "Подарок от NS"
-            },
-            "en": {
-                "Addition": "a + b",
-                "Subtraction": "a - b",
-                "Multiplication": "a × b",
-                "Division": "a : b",
-                "Power": "aᵇ",
-                "Square Root": "√a",
-                "Factorial": "a! = 1 × ... × a",
-                "Double Factorial": "a!! = Even/Odd",
-                "Is Prime?": "Prime?",
-                "Factors": "a = b1 × ... × bn",
-                "LCM": "LCM a and b",
-                "GCD": "GCD a and b",
-                "Sine": "sin(a)",
-                "Cosine": "cos(a)",
-                "Tangent": "tg(a)",
-                "Cotangent": "ctg(a)",
-                "° → rad": "° → rad",
-                "rad → °": "rad → °",
-                "Linear Eq": "ax + b = 0",
-                "Quadratic Eq": "ax² + bx + c = 0",
-                "Logarithm": "logₐb",
-                "Absolute": "|a|",
-                "Fractional": "{a}",
-                "Integer": "[a]",
-                "Line": "y = ax + b",
-                "Parabola": "y = ax² + bx + c",
-                "Hyperbola": "y = a / (x + b) + c",
-                "Sine Wave": "y = a×sin(x) + b",
-                "Cosine Wave": "y = a×cos(x) + b",
-                "Tangent Wave": "y = a×tg(x) + b",
-                "Circle": "(y-a)² + (x-b)² = c²",
-                "Mod X": "y = a|x| + b",
-                "Mod Y": "|y| = ax + b",
-                "Mod XY": "|y| = a|x| + b",
-                "Cotangent Wave": "y = a×ctg(x) + b",
-                "Heart": "Gift from NS"
-            }
+        # Словари формул для подсказок на кнопках
+        self.formulas_ru = {
+            "Сложение": "a + b",
+            "Вычитание": "a - b",
+            "Умножение": "a × b",
+            "Деление": "a : b",
+            "Степень": "aᵇ",
+            "Корень числа": "√a",
+            "Факториал": "a! = 1 × ... × a",
+            "Дв-й Факториал": "a!! = ×Чет/Нечет",
+            "Простое?": "Простое?",
+            "Множители": "a = b1 × ... × bn",
+            "НОК": "НОК a и b",
+            "НОД": "НОД a и b",
+            "Синус": "sin(a)",
+            "Косинус": "cos(a)",
+            "Тангенс": "tg(a)",
+            "Котангенс": "ctg(a)",
+            "° → rad": "° → rad",
+            "rad → °": "rad → °",
+            "Уравнение Х": "ax + b = 0",
+            "Уравнение Х²": "ax² + bx + c = 0",
+            "Логарифм": "logₐb",
+            "Модуль": "|a|",
+            "Дробная Часть": "{a}",
+            "Целая Часть": "[a]",
+            "Прямая": "y = ax + b",
+            "Парабола": "y = ax² + bx + c",
+            "Гипербола": "y = a / (x + b) + c",
+            "Синусоида": "y = a×sin(x) + b",
+            "Косинусоида": "y = a×cos(x) + b",
+            "Тангенсоида": "y = a×tg(x) + b",
+            "Окружность": "(y-a)² + (x-b)² = c²",
+            "Модуль Х": "y = a|x| + b",
+            "Модуль Y": "|y| = ax + b",
+            "Модуль Y и Х": "|y| = a|x| + b",
+            "Котангенсоида": "y = a×ctg(x) + b",
+            "Сердце": "Подарок от NS"
         }
 
-        self.colors = {
-            'bg': '#0a0a0f',
-            'surface': '#151522',
-            'card': '#1e1e2e',
-            'primary': '#7c3aed',
-            'secondary': '#06b6d4',
-            'accent': '#10b981',
-            'text': '#e2e8f0',
-            'text_light': '#94a3b8',
-            'danger': '#ef4444',
-            'warning': '#f59e0b',
-            'border': '#2d3748'
-        }
-
-        self.themes = {
-            "dark": {
-                'bg': '#0a0a0f',
-                'surface': '#151522',
-                'card': '#1e1e2e',
-                'primary': '#7c3aed',
-                'secondary': '#06b6d4',
-                'accent': '#10b981',
-                'text': '#e2e8f0',
-                'text_light': '#94a3b8',
-                'danger': '#ef4444',
-                'warning': '#f59e0b',
-                'border': '#2d3748'
-            },
-            "light": {
-                'bg': '#f5f5f5',
-                'surface': '#ffffff',
-                'card': '#eaeaea',
-                'primary': '#7c3aed',
-                'secondary': '#06b6d4',
-                'accent': '#10b981',
-                'text': '#1a1a1a',
-                'text_light': '#6b7280',
-                'danger': '#ef4444',
-                'warning': '#f59e0b',
-                'border': '#d1d5db'
-            }
+        self.formulas_en = {
+            "Addition": "a + b",
+            "Subtraction": "a - b",
+            "Multiplication": "a × b",
+            "Division": "a : b",
+            "Power": "aᵇ",
+            "Square Root": "√a",
+            "Factorial": "a! = 1 × ... × a",
+            "Double Factorial": "a!! = Even/Odd",
+            "Is Prime?": "Prime?",
+            "Factors": "a = b1 × ... × bn",
+            "LCM": "LCM a and b",
+            "GCD": "GCD a and b",
+            "Sine": "sin(a)",
+            "Cosine": "cos(a)",
+            "Tangent": "tg(a)",
+            "Cotangent": "ctg(a)",
+            "° → rad": "° → rad",
+            "rad → °": "rad → °",
+            "Linear Eq": "ax + b = 0",
+            "Quadratic Eq": "ax² + bx + c = 0",
+            "Logarithm": "logₐb",
+            "Absolute": "|a|",
+            "Fractional": "{a}",
+            "Integer": "[a]",
+            "Line": "y = ax + b",
+            "Parabola": "y = ax² + bx + c",
+            "Hyperbola": "y = a / (x + b) + c",
+            "Sine Wave": "y = a×sin(x) + b",
+            "Cosine Wave": "y = a×cos(x) + b",
+            "Tangent Wave": "y = a×tg(x) + b",
+            "Circle": "(y-a)² + (x-b)² = c²",
+            "Mod X": "y = a|x| + b",
+            "Mod Y": "|y| = ax + b",
+            "Mod XY": "|y| = a|x| + b",
+            "Cotangent Wave": "y = a×ctg(x) + b",
+            "Heart": "Gift from NS"
         }
 
         self.root.configure(bg=self.colors['bg'])
@@ -322,15 +310,15 @@ class Calculator:
 
         tk.Radiobutton(settings, text="Русский", variable=lang_var, value="ru",
                        bg=self.colors['bg'], fg=self.colors['text'],
-                       command=lambda:self.change_language(lang_var.get())
-        ).pack()
+                       command=lambda: self.change_language(lang_var.get())
+                       ).pack()
 
         tk.Radiobutton(settings, text="English", variable=lang_var, value="en",
                        bg=self.colors['bg'], fg=self.colors['text'],
                        command=lambda: self.change_language(lang_var.get())
-        ).pack()
+                       ).pack()
 
-        theme_var = tk.StringVar(value="dark")
+        theme_var = tk.StringVar(value=self.current_theme)
 
         tk.Label(settings, text=self.t("theme"),
                  bg=self.colors['bg'], fg=self.colors['text']).pack()
@@ -533,7 +521,12 @@ class Calculator:
             btn.grid(row=i // 3, column=i % 3, padx=3, pady=3, sticky='ew')
 
             btn.original_text = text
-            btn.formula_text = self.button_formulas.get(text, text)
+
+            # Получаем формулу для подсказки в зависимости от языка
+            if self.language == "ru":
+                btn.formula_text = self.formulas_ru.get(text, text)
+            else:
+                btn.formula_text = self.formulas_en.get(text, text)
 
             btn.bind("<Enter>", lambda e, b=btn, c=color: self.on_button_enter(e, b, c))
             btn.bind("<Leave>", lambda e, b=btn: self.on_button_leave(e, b))
@@ -581,20 +574,13 @@ class Calculator:
 
         self.status_label = tk.Label(
             input_card,
-            text="Строки для ввода переменных",
-            font=self.font_subtitle,
-            bg=self.colors['card'],
-            fg=self.colors['text_light'],
-            anchor='w'
-        )
-        self.status_label = tk.Label(
-            input_card,
             text=self.t("input_hint"),
             font=self.font_subtitle,
             bg=self.colors['card'],
             fg=self.colors['text_light'],
             anchor='w'
         )
+        self.status_label.pack(fill='x', padx=15, pady=(0, 10))
 
     def create_output_section(self, parent):
         frame = tk.Frame(parent, bg=self.colors['surface'])
@@ -891,7 +877,7 @@ class Calculator:
         self.current_function = None
         self.expression_var.set("")
         self.result_var.set("ВЫБЕРИТЕ ОПЕРАЦИЮ И ЗАПОЛНИТЕ СТРОКИ")
-        self.status_label.config(text="Строки для ввода переменных")
+        self.status_label.config(text=self.t("input_hint"))
 
         for widget in self.input_container.winfo_children():
             widget.destroy()
@@ -1788,6 +1774,7 @@ class Calculator:
             fg=self.colors['text'],
             text=button.original_text
         )
+
 
 if __name__ == "__main__":
     root = tk.Tk()
